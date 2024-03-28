@@ -9,6 +9,7 @@ Been trying out nvim for a week or so as an experiment and at this point losing 
 - Run the install script
 - Add a nerd font to system
 - Run .nvim in the terminal
+- For PopOS `sudo apt-get install ripgrep` is needed for the telescope ui extension to work. `"nvim-telescope/telescope-ui-select.nvim"` 
 
 - Theres also some linters and formatters that need to be installed through the :Mason command these are
     - eslint_d
@@ -18,6 +19,9 @@ Been trying out nvim for a week or so as an experiment and at this point losing 
 
 #### Issues
 - Tried on both PopOS and MacOS, if composer is not installed the Phpactor plugin will not work but there's Intelephense so setup that for now.
+- Spell check needs to be disabled in the options.lua file on PopOS otherwise theres red line issues on imports.
+- Who knows how to setup a start screen on this thing.
+- Annoying tab called [No Name] that opens up when nvim is started.
 
 #### Lots of help taken from the following sources:
 - [Jess Archers Laracasts series on nvim](https://laracasts.com/series/neovim-as-a-php-ide)

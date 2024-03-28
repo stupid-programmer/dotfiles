@@ -14,7 +14,8 @@ return {
           -- This makes sure the lsp is installed on our system
           -- it goes ahead and installs the lsp if one not found 
           -- it doesn't hook up the lsp to neovim here, just installs 
-          ensure_installed = { "lua_ls", "tsserver", "phpactor", "intelephense" }
+          ensure_installed = { "lua_ls", "tsserver", "phpactor" }
+          -- ensure_installed = { "lua_ls", "tsserver", "intelephense" }
         })
     end
   },
@@ -26,17 +27,6 @@ return {
         local lspconfig = require('lspconfig')
         lspconfig.lua_ls.setup({})
         lspconfig.tsserver.setup({})
-        -- lspconfig.intelephense.setup({
-            -- Left this here as a reminder theres other settings
-            -- on_init = function(client)
-		        -- client.server_capabilities.documentFormattingProvider = false
-	        -- end,
-            -- handlers = {
-                -- These diagnostics don't work well with Laravel, so we just ignore them
-                -- not sure how we'd set something nicer up
-              -- ['textDocument/publishDiagnostics'] = function() end
-            -- }
-        -- })
         lspconfig.phpactor.setup({
             handlers = {
                 -- These diagnostics don't work well with Laravel, so we just ignore them
@@ -44,6 +34,17 @@ return {
               ['textDocument/publishDiagnostics'] = function() end
             }
         })
+        -- lspconfig.intelephense.setup({
+        --     -- Left this here as a reminder theres other settings
+        --     on_init = function(client)
+		        -- client.server_capabilities.documentFormattingProvider = false
+	        -- end,
+        --     handlers = {
+        --         -- These diagnostics don't work well with Laravel, so we just ignore them
+        --         -- not sure how we'd set something nicer up
+        --       ['textDocument/publishDiagnostics'] = function() end
+        --     }
+        -- })
     end
   }
 }
